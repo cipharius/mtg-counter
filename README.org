@@ -1,0 +1,2 @@
+* MTG counter
+  Simple web-based live counter for Magic: The Gathering.

@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+
+    font-family: sans-serif;
+}
+
+.counter {
+    display: flex;
+
+    flex: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Counter colors */
+.red.counter {
+    background: radial-gradient(ellipse at center, #FF3600, #D0281E);
+}
+
+.green.counter {
+    background: radial-gradient(ellipse at center, #2DAE40, #04662D);
+}
+
+.blue.counter {
+    background: radial-gradient(ellipse at center, #0989bc, #085998);
+}
+
+.white.counter {
+    background: radial-gradient(ellipse at center, #F0F2D8, #E3E4D2);
+}
+
+.black.counter {
+    background: radial-gradient(ellipse at center, #565946, #2B2C24);
+}
+
+.increment, .decrement {
+    width: 5rem;
+    height: 5rem;
+
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    text-shadow: 1px 1px #000;
+
+    transform: scale(1);
+    transition: transform ease 0.05s;
+}
+
+.increment:before {
+    content: "\f067";
+}
+
+.decrement:before {
+    content: "\f068";
+}
+
+.increment:hover, .decrement:hover {
+    transform: scale(1.2);
+}
+
+.increment:active, .decrement:active {
+    transform: scale(0.9);
+}
+
+.increment:active, .decrement:active, .increment:focus, .decrement:focus {
+    background: none;
+    outline: none;
+    padding: 0;
+}
+
+.value {
+    margin: 1rem 1.5rem;
+
+    color: white;
+    font-size: 80pt;
+    text-align: center;
+    line-height: 1em;
+    text-shadow: 1px 1px #000;
+}
+
+#counter-frame {
+    display: flex;
+    height: 100%;
+
+    flex-direction: column;
+}
+
+/* Mobile specific */
+@media screen and (max-width: 599px) {
+    #counter-frame .counter:first-child {
+        transform: rotate(180deg);
+    }
+}
+
+/* Desktop rules */
+@media screen and (min-width: 600px) {
+    .counter {
+        flex-direction: column;
+    }
+
+    .increment, .decrement {
+        width: 10rem;
+        height: 8rem;
+    }
+
+    .increment:before {
+        content: "\f077";
+    }
+
+    .decrement:before {
+        content: "\f078";
+    }
+
+    #counter-frame {
+        flex-direction: row;
+    }
+}
