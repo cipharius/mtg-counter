@@ -1,2 +1,19 @@
 * MTG counter
   Simple web-based live counter for Magic: The Gathering.
+* Setting up
+  First, compile client code:
+  #+BEGIN_SRC bash
+    nim js -d:release -o:public/app.js client
+  #+END_SRC
+
+  Then compile the server:
+  #+BEGIN_SRC bash
+    nim c -d:release server
+  #+END_SRC
+* Hosting
+  Host the web app, by running:
+  #+BEGIN_SRC bash
+    ./server --port:80
+  #+END_SRC
+
+  Default port is 5000.
