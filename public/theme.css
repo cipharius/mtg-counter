@@ -40,7 +40,7 @@ body {
 }
 
 .increment, .decrement {
-    width: 5rem;
+    width: 4rem;
     height: 5rem;
 
     color: white;
@@ -76,6 +76,7 @@ body {
 }
 
 .value {
+    width: 9rem;
     margin: 1rem 1.5rem;
 
     color: white;
@@ -83,6 +84,7 @@ body {
     text-align: center;
     line-height: 1em;
     text-shadow: 1px 1px #000;
+    overflow: hidden;
 }
 
 #counter-frame {
