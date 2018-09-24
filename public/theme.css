@@ -9,11 +9,16 @@
     user-select: none;
 }
 
+button::-moz-focus-inner {
+    border: 0;
+}
+
 body {
     height: 100vh;
     margin: 0;
 
     font-family: sans-serif;
+    touch-action: manipulation;
 }
 
 .counter {
@@ -55,9 +60,6 @@ body {
     border: none;
     outline: none;
     text-shadow: 1px 1px #000;
-
-    transform: scale(1);
-    transition: transform ease 0.05s;
 }
 
 .increment:before {
@@ -68,12 +70,20 @@ body {
     content: "\f068";
 }
 
-.increment:hover, .decrement:hover {
-    transform: scale(1.2);
+.increment:not(:active), .decrement:not(:active) {
+    animation: button-click 0.1s ease-out;
 }
 
-.increment:active, .decrement:active {
-    transform: scale(0.9);
+@keyframes button-click {
+    0% {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(0.6);
+    }
+    100% {
+        transform: scale(1.0);
+    }
 }
 
 .increment:active, .decrement:active, .increment:focus, .decrement:focus {
